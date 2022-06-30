@@ -20,7 +20,7 @@ class Task constructor(
 
     override fun afterPropertiesSet() {
         log.info("start")
-        val pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())!!
+        val pool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()*4)!!
         try {
             if (!Const.prefix.toFile().exists()) {
                 Files.createDirectory(Const.prefix)
@@ -50,7 +50,7 @@ class Task constructor(
                     if(num!=0&&file!=null){
                         val end = System.currentTimeMillis() - start
                         val seconds = TimeUnit.MILLISECONDS.toSeconds(end)
-                        log.info("from $left to $right is done , has write $num records and it takes $seconds second,file path located in  ${file.absoluteFile}")
+                        log.info("from $left to $right is done,has write $num records and it takes $seconds second,file path located in  ${file.absoluteFile}")
                     }
                 }
             }

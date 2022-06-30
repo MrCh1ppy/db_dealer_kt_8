@@ -41,7 +41,7 @@
         option_1 option1,
         record_status recordStatus,
         lastupdate_time lastupdateTime
-        from fact_jzjg
+        from dw_vaccination_info
         where vaccination_id
         between #{left,jdbcType=VARCHAR} and #{right,jdbcType=VARCHAR}
         limit 1

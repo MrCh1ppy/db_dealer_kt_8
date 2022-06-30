@@ -16,11 +16,10 @@ object Const {
         for (i in 0 until 26){
             list.add((codeA+i).toChar())
         }
-        list.toCharArray()
-        val codea = 'a'.code
+        /*val codea = 'a'.code
         for (i in 0 until 26){
             list.add((codea+i).toChar())
-        }
+        }*/
         list.toCharArray()
     }
     val DONE_SET= setOf<Char>()
