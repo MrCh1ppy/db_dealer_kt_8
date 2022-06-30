@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    #username: jkzx_hsjc
+    #password: jkzx_hsjc#hsjc$
+    #url: jdbc:mysql://59.225.208.37:11006/yqsj_hsjccyxx
+
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/csharplearning
+
+
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  type-aliases-package: com.example.db_dealer.pojo
+  mapper-locations: classpath:mapper/*.xml
+
+

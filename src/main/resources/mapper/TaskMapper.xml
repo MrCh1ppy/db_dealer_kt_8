@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.db_dealer_kt_8.dao.Dao">
+
+    <select id="selectRecord" resultType="com.example.db_dealer_kt_8.entity.po.UserData">
+        select
+        vaccination_date  vaccinationDate,
+        vaccination_id vaccinationId,
+        vaccine_code vaccineCode,
+        idcard_no idCardNo,
+        name,
+        idcard_type idCardType,
+        vaccine_seq vaccineSeq,
+        sfjzwc sfjzwc,
+        push_time pushTime,
+        etl_time etlTime,
+        option_1 option1,
+        record_status recordStatus,
+        lastupdate_time lastupdateTime
+        from dw_vaccination_info
+        where vaccination_id
+        between #{left,jdbcType=VARCHAR} and #{right,jdbcType=VARCHAR}
+        limit 10000
+        offset #{start}
+    </select>
+
+    <select id="selectRecordOne" resultType="com.example.db_dealer_kt_8.entity.po.UserData">
+        select
+        vaccination_date  vaccinationDate,
+        vaccination_id vaccinationId,
+        vaccine_code vaccineCode,
+        idcard_no idCardNo,
+        name,
+        idcard_type idCardType,
+        vaccine_seq vaccineSeq,
+        sfjzwc sfjzwc,
+        push_time pushTime,
+        etl_time etlTime,
+        option_1 option1,
+        record_status recordStatus,
+        lastupdate_time lastupdateTime
+        from fact_jzjg
+        where vaccination_id
+        between #{left,jdbcType=VARCHAR} and #{right,jdbcType=VARCHAR}
+        limit 1
+    </select>
+</mapper>
