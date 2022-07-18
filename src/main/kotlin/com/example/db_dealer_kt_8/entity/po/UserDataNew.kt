@@ -43,7 +43,7 @@ data class UserDataNew constructor(
     }
 
     override fun toString(): String {
-        return "$vaccinationDate,$vaccinationId,$vaccineCode,$idCardNo,$name,$idCardType,$vaccineSeq,$sfjzwc,$pushTime,$etlTime,$option1,$recordStatus,$lastUpdateTime,$vaccinationOrgCode,$parsedName,$parsedId"
+        return "$vaccinationDate,$vaccinationId,$vaccineCode,$idCardNo,$name,$idCardType,$vaccineSeq,$sfjzwc,$pushTime,$etlTime,$option1,$recordStatus,$lastUpdateTime,$parsedName,$parsedId"
     }
 }
 
