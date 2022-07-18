@@ -1,5 +1,6 @@
-package com.example.db_dealer_kt_8.entity.po
+package com.example.db_dealer_kt_8.entity.dto
 
+import com.example.db_dealer_kt_8.entity.po.UserData
 import com.example.db_dealer_kt_8.sz.CodingUtils
 
 data class UserDataNew constructor(

@@ -3,10 +3,9 @@ package com.example.db_dealer_kt_8.service.impl
 import com.example.db_dealer_kt_8.service.TaskService
 import com.example.db_dealer_kt_8.dao.Dao
 import com.example.db_dealer_kt_8.entity.dto.DealInfo
-import com.example.db_dealer_kt_8.entity.po.UserDataNew
+import com.example.db_dealer_kt_8.entity.dto.UserDataNew
 import com.example.db_dealer_kt_8.utils.const_value.Const
 import com.example.db_dealer_kt_8.utils.log.Slf4j
-import org.apache.logging.log4j.util.Chars
 import org.springframework.stereotype.Service
 import java.io.FileOutputStream
 import java.nio.charset.StandardCharsets
@@ -20,7 +19,7 @@ class TaskServiceImpl constructor(val dao: Dao) : TaskService {
     override fun doService(left: String, right: String): DealInfo {
         val temp = left.substring(1)
         if("9"==temp||"Z"==temp||"z"==temp){
-            return DealInfo(null,0);
+            return DealInfo(null,0)
         }
         val fileName = if (left.toCharArray()[0] in 'a'.. 'z'){ "_$left" }else{ left }
         val one = dao.selectRecordOne(left, right)
@@ -39,7 +38,7 @@ class TaskServiceImpl constructor(val dao: Dao) : TaskService {
                 val text=vos.toString()+"\n"
                 it.write(text.toByteArray(StandardCharsets.UTF_8))
                 if (record.size < Const.NUM) {
-                    return DealInfo(file,(limit - 1) * Const.NUM + record.size );
+                    return DealInfo(file,(limit - 1) * Const.NUM + record.size )
                 }
                 limit+=1
             }
